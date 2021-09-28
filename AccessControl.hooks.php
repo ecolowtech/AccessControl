@@ -537,16 +537,16 @@ class AccessControlHooks {
 										if ( $accesslist['ns'] == 0 ) {
 											foreach ($wgAccessControlNamespaces as $ns) {
 												$array = self::getContentPageNew( $group, $ns);
-												if ( array_key_exists( VIEW, $array) ) {
-													foreach( array_keys($array[VIEW]) as $user) {
+												if ( array_key_exists( EDIT, $array) ) {
+													foreach( array_keys($array[EDIT]) as $user) {
 														$allow[EDIT][$user] = true;
 													}
 												}
 											}
 										} else {
 											$array = self::getContentPageNew( $accesslist['title'], $accesslist['ns']);
-											if ( array_key_exists( VIEW, $array) ) {
-												foreach( array_keys($array[VIEW]) as $user) {
+											if ( array_key_exists( EDIT, $array) ) {
+												foreach( array_keys($array[EDIT]) as $user) {
 													$allow[EDIT][$user] = true;
 												}
 											}
